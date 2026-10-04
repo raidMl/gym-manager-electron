@@ -1,0 +1,37 @@
+{
+  "appId": "com.gymmaster.pos",
+  "productName": "GymMaster POS",
+  "copyright": "Copyright © 2026 GymMaster",
+  "directories": {
+    "output": "release",
+    "buildResources": "build"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["ia32", "x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["ia32", "x64"]
+      }
+    ],
+    "requestedExecutionLevel": "asInvoker"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": true,
+    "allowElevation": true,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "GymMaster POS",
+    "artifactName": "${productName}-${version}-${os}-${arch}-Setup.${ext}"
+  }
+}
